@@ -1,0 +1,28 @@
+.card {
+  width: 200px;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgb(230,230,230);
+  text-align: center;
+  padding: 20px;
+  border: 1px solid rgb(230,230,230);
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  transition: transform .7s ease-in-out;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.card img:hover{
+  transform: rotate(360deg);
+}
+
+.card p {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Raleway, sans-serif;
+}

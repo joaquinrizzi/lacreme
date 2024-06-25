@@ -1,0 +1,26 @@
+<h1>
+  <%= t('services.index.title') %>
+</h1>
+<%# table with services %>
+<table>
+  <thead>
+    <tr>
+      <th><%= t('services.index.name') %></th>
+      <th><%= t('services.index.price') %></th>
+      <th><%= t('services.index.actions') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @services.each do |service| %>
+      <tr>
+        <td><%= service.name %></td>
+        <td><%= service.price %></td>
+        <td><%= service.description %></td>
+        <td><%= service.duration %></td>
+        <td>
+          <%= link_to t('services.index.edit'), edit_service_path(service) %>
+          <%= link_to t('services.index.delete'), service, method: :delete, data: { confirm: t('services.index.confirm') } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>

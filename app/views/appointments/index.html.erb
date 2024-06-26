@@ -1,5 +1,7 @@
-<h1>Appointments</h1>
-
-<%= f.input :opening_date,
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
+<div class="container">
+  <h1>Appointments</h1>
+  <%= simple_form_for @appointment do |f|%>
+    <%= f.input :date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+    <%= f.submit "Submit" %>
+  <% end %>
+</div>

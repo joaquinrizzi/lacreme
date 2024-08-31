@@ -1,23 +1,33 @@
 .footer {
   text-align: center;
   padding: 60px;
-  background-color: #8b4d98;
+  background-color: #4D363D;
 }
 .footer-links {
   align-items: center;
   text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
 }
 .footer-links a {
   font-size: 30px;
   color: #1EDD88;
+  margin: 0 15px;
 }
 .footer-links a:hover {
   opacity: 1;
 }
-.footer .fa-heart {
-  color: #D23333;
-}
+// .footer .fa-heart {
+//   color: #D23333;
+// }
 
 .footer-links a:hover {
   opacity: .7;
+}
+
+.footer p {
+  color: white;
+  font-size: 20px;
+  margin-top: 20px;
 }

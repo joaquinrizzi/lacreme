@@ -6,6 +6,7 @@ User.destroy_all
 # User creation
 
 User.create!(email: 'azulsm7@gmail.com', password: '123456')
+User.create!(email: 'joaquinsotorizzi@gmail.com', password: '111111')
 
 # Service creation
 Service.create(name: 'dépose semi-permanent', price: 5.0, duration: 15, description: 'Dépose du semi-permanent')

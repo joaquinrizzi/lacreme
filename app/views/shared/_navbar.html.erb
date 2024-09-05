@@ -1,4 +1,5 @@
-<div class="navbar navbar-expand-sm navbar-light">
+<!-- In your navbar HTML, e.g., _navbar.html.erb -->
+<nav class="navbar navbar-expand-lg navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag "logo.png" %>
@@ -9,14 +10,36 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Home", "#", class: "nav-link nav-link-joaquin" %>
+          </li>
           <li class="nav-item active">
             <%= link_to "Services", "#services", class: "nav-link nav-link-joaquin" %>
           </li>
           <li class="nav-item">
             <%= link_to "Contact", "#contact", class: "nav-link nav-link-joaquin" %>
           </li>
+          <li class="nav-item dropdown">
+            <%= link_to "#", class: "nav-link nav-link-joaquin dropdown-toggle", id: "navbarDropdown", role: "button", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
+              <i class="fa-regular fa-user avatar"></i>
+              <%#= image_tag "logo.png", class: "avatar" %>
+              <%# <%= current_user.email %>
+            <% end %>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <li><%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %></li>
+              <li><%= link_to "Another action", "#", class: "dropdown-item" %></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><%= link_to "Me déconecter", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete } %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link nav-link-joaquin" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
-</div>
+</nav>

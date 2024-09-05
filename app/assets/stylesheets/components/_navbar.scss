@@ -1,4 +1,7 @@
-.navbar {
+/* Assuming you have a CSS file linked to your HTML */
+
+
+.navbar-lewagon {
   width: calc(100% - 80px); /* Ensure it spans the full width */
   position: fixed; /* If you want it to be fixed at the top */
   top: 0;
@@ -9,18 +12,18 @@
   padding: 10px 10px; /* Add some padding if needed */
   border-radius: 50px 50px; /* Remove border-radius if any */
   margin-top: 40px;
+  justify-content: space-between;
+  // background: white;
 }
 
-.navbar .navbar-collapse {
+.navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar .navbar-brand img {
-  width: 100px;
+.navbar-lewagon .navbar-brand img {
   border-radius: 50px 50px;
+  width: 100px;
 }
-
-/* Assuming you have a CSS file linked to your HTML */
 
 .navbar .nav-link-joaquin {
   color: white;

@@ -27,10 +27,10 @@ class ServicesController < ApplicationController
     @service.creator_id = current_user.id
     if @service.save
       # rest on index page
-      flash[:notice] = 'Service créé avec succes.'
+      flash[:notice] = 'Service créé avec succès.'
       redirect_to services_path
     else
-      flash[:alert] = 'Le service n\'a pas été créé. Verifiez les champs.'
+      flash[:alert] = 'Le service n\'a pas été créé. Verifiez tous les champs.'
       render :index
     end
   end

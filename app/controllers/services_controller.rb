@@ -7,10 +7,6 @@ class ServicesController < ApplicationController
     @service = Service.new
   end
 
-  def show
-    raise
-  end
-
   def update
     @service = Service.find(params[:id])
     if @service.update(service_params)

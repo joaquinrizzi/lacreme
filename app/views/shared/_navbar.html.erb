@@ -16,7 +16,7 @@
             <%= link_to "Home", "#", class: "nav-link nav-link-joaquin" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Catalog", "#catalog", class: "nav-link nav-link-joaquin" %>
+            <%= link_to "Catalogue", "#catalog", class: "nav-link nav-link-joaquin" %>
           </li>
           <li class="nav-item">
             <%= link_to "Contact", "#contact", class: "nav-link nav-link-joaquin" %>
@@ -24,16 +24,18 @@
           <% if current_user.has_role?(:admin) %>
             <li class="nav-item">
               <%= link_to "Rdvs", appointments_path, class: "nav-link nav-link-joaquin" %>
+            </li>
+            <li class="nav-item">
               <%= link_to "Services", services_path, class: "nav-link nav-link-joaquin" %>
             </li>
           <% end %>
           <li class="nav-item dropdown">
-            <%= link_to "#", class: "nav-link nav-link-joaquin dropdown-toggle", id: "navbarDropdown", role: "button", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
+            <%= link_to "#", class: "nav-link nav-link-joaquin dropdown-toggle no-caret", id: "navbarDropdown", role: "button", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
               <i class="fa-regular fa-user avatar"></i>
               <%#= image_tag "logo.png", class: "avatar" %>
               <%# <%= current_user.email %>
             <% end %>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu dropdown-menu-end rounded-dropdown" aria-labelledby="navbarDropdown">
               <li><%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %></li>
               <li><%= link_to "Another action", "#", class: "dropdown-item" %></li>
               <li><hr class="dropdown-divider"></li>

@@ -26,10 +26,65 @@
   margin-right: 0;
 }
 
-.container-catalog{
+.catalog-container{
   margin-top: 30px;
   // display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 40px;
+}
+
+.home-container {
+  background-image: url(asset_path('lacreme_background.jpg'));
+  background-size: cover;
+}
+
+.instructions-container {
+  display: flex;
+  flex-direction: column;
+  // justify-items: center;
+  // height: 100vh;
+  width: 100vw;
+  // padding: 20px;
+  // align-items: center;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+
+.instructions-container h1, h2, img {
+  // display: inline-block;
+  text-align: center;
+}
+
+.instructions-container .mode-emploi-container{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.instructions-container .title {
+  margin-bottom: 20px;
+}
+
+.instructions-container .title {
+  h1, h2, img {
+    display: inline-block;
+  }
+}
+
+.instructions-container .content {
+  background-color: #f1e7c3;
+  border: solid 2px black;
+  border-radius: 20px;
+  width: fit-content;
+  padding: 40px;
+  margin-bottom: 40px;
+}
+
+.instructions-container .kit {
+  // width: 80px;
 }

@@ -12,15 +12,21 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <% if user_signed_in? %>
-          <li class="nav-item">
+          <li class="nav-item active">
             <%= link_to "Home", "#", class: "nav-link nav-link-joaquin" %>
           </li>
-          <li class="nav-item active">
-            <%= link_to "Services", "#services", class: "nav-link nav-link-joaquin" %>
+          <li class="nav-item">
+            <%= link_to "Catalog", "#catalog", class: "nav-link nav-link-joaquin" %>
           </li>
           <li class="nav-item">
             <%= link_to "Contact", "#contact", class: "nav-link nav-link-joaquin" %>
           </li>
+          <% if current_user.has_role?(:admin) %>
+            <li class="nav-item">
+              <%= link_to "Rdvs", appointments_path, class: "nav-link nav-link-joaquin" %>
+              <%= link_to "Services", services_path, class: "nav-link nav-link-joaquin" %>
+            </li>
+          <% end %>
           <li class="nav-item dropdown">
             <%= link_to "#", class: "nav-link nav-link-joaquin dropdown-toggle", id: "navbarDropdown", role: "button", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
               <i class="fa-regular fa-user avatar"></i>

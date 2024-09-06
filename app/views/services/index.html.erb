@@ -1,9 +1,16 @@
 <h1>Services</h1>
-<%# table with services %>
+<%= link_to "Retour", root_path %>
+<%= simple_form_for @service do |f| %>
+  <%= f.input :name, label: 'Nom du service' %>
+  <%= f.input :price, label: 'Prix' %>
+  <%= f.input :description, label: 'Description du service' %>
+  <%= f.input :duration, label: 'Durée' %>
+  <%= f.submit "Soumettre" %>
+<% end %>
 <table>
   <thead>
     <tr>
-      <th>Nome</th>
+      <th>Nom</th>
       <th>Prix</th>
       <th>Description</th>
       <th>Durée</th>
@@ -19,7 +26,7 @@
         <td><%= service.duration %> <small>min</small> </td>
         <td>
           <%= link_to t('services.index.edit'), edit_service_path(service) %>
-          <%= link_to t('services.index.delete'), service, method: :delete, data: { confirm: t('services.index.confirm') } %>
+          <%= link_to t('services.index.delete'), service, method: :delete, remote: true, data: { confirm: t('services.index.confirm') } %>
         </td>
       </tr>
     <% end %>

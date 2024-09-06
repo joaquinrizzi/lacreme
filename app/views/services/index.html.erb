@@ -19,15 +19,29 @@
   </thead>
   <tbody>
     <% @services.each do |service| %>
-      <tr>
-        <td><%= service.name %></td>
-        <td><%= service.price  %> <small>€</small></td>
-        <td><%= service.description %></td>
-        <td><%= service.duration %> <small>min</small> </td>
-        <td>
-          <%= link_to t('services.index.edit'), edit_service_path(service) %>
-          <%= link_to t('services.index.delete'), service, method: :delete, remote: true, data: { confirm: t('services.index.confirm') } %>
+      <tr data-controller="service-edit">
+        <td data-service-edit-target="name" class="display"><%= service.name %></td>
+        <td data-service-edit-target="price" class="display"><%= service.price %> <small>€</small></td>
+        <td data-service-edit-target="description" class="display"><%= service.description %></td>
+        <td data-service-edit-target="duration" class="display"><%= service.duration %> <small>min</small></td>
+        <td class="display">
+          <%= link_to 'Modifier', '#', data: { action: 'service-edit#edit' } %>
+          <%= link_to "Suprimer", service_path(service), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Etes vous sûr ?"
+                  } %>
+          <%#= link_to 'Delete', service, method: :delete, data: { confirm: 'Etes vous sûr ?' } %>
+        </td>
+        <td class="form d-none" data-service-edit-target="form">
+          <%= form_with(model: service, local: false, html: { class: 'edit-form', data: { action: 'submit->service-edit#save' } }) do |f| %>
+            <%= f.text_field :name %>
+            <%= f.text_field :price %>
+            <%= f.text_field :description %>
+            <%= f.text_field :duration %>
+            <%= f.submit 'Save' %>
+          <% end %>
         </td>
       </tr>
     <% end %>
   </tbody>
+</table>

@@ -1,0 +1,9 @@
+<h1>Modifier cet Rdv</h1>
+<%= link_to "Retour", root_path %>
+<%= simple_form_for @appointment, url: appointment_path(@appointment), method: :patch do |f| %>
+  <%= f.input :date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+  <%= f.input :time, label: "Heure", as: :time, input_html: { data: { controller: "timepicker" } } %>
+  <%= f.input :client_id, collection: @clients, label_method: :first, value_method: :second, prompt: "Choisissez un client" %>
+  <%= f.input :service_id, collection: @services, label_method: :first, value_method: :second, prompt: "Choisissez un service" %>
+  <%= f.submit "Submit" %>
+<% end %>

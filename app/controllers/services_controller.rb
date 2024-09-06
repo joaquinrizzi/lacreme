@@ -1,10 +1,25 @@
 class ServicesController < ApplicationController
   before_action :authenticate_user!
   before_action :authorize_admin
-  before_action :set_services, only: [:index, :create]
+  before_action :set_services, only: %i[index create]
 
   def index
     @service = Service.new
+  end
+
+  def update
+    @service = Service.find(params[:id])
+    if @service.update(service_params)
+      respond_to do |format|
+        format.json { render json: { success: true, service: @service } }
+        format.html { redirect_to services_path, notice: 'Service modifié avec succès.' }
+      end
+    else
+      respond_to do |format|
+        format.json { render json: { success: false, errors: @service.errors.full_messages } }
+        format.html { render :edit }
+      end
+    end
   end
 
   def create
@@ -23,14 +38,13 @@ class ServicesController < ApplicationController
   def destroy
     @service = Service.find(params[:id])
     @service.destroy
-
-    redirect_to services_path, notice: 'Service was successfully deleted.'
+    redirect_to services_path, status: :see_other
   end
 
   private
 
   def authorize_admin
-    redirect_to(root_path, alert: 'Access Denied') unless current_user.has_role?(:admin)
+    redirect_to(root_path, alert: 'Access refusé') unless current_user.has_role?(:admin)
   end
 
   def service_params
@@ -40,5 +54,4 @@ class ServicesController < ApplicationController
   def set_services
     @services = Service.all
   end
-
 end

@@ -3,34 +3,40 @@
   <%= link_to "Retour", root_path %>
   <%= simple_form_for @appointment, url: appointments_path do |f| %>
     <%= f.input :date, as: :string, input_html: { data: { controller: "datepicker" } } %>
-    <%= f.input :time, as: :time, input_html: { data: { controller: "timepicker" } } %>
+    <%= f.input :time, label: "Heure", as: :time, input_html: { data: { controller: "timepicker" } } %>
     <%= f.input :client_id, collection: @clients, label_method: :first, value_method: :second, prompt: "Choisissez un client" %>
     <%= f.input :service_id, collection: @services, label_method: :first, value_method: :second, prompt: "Choisissez un service" %>
-    <%= f.submit "Submit" %>
+    <%= f.submit "Soumettre" %>
   <% end %>
 
   <table class="table">
     <thead>
       <tr>
         <th>Date</th>
-        <th>Prenom</th>
+        <th>Heure</th>
+        <th>Prénom</th>
         <th>Nom</th>
         <th>Service</th>
         <th>Prix</th>
         <th>Actions</th>
       </tr>
     </thead>
+    <hr>
     <tbody>
       <% @appointments.each do |appointment| %>
         <tr>
           <td><%= appointment.date %></td>
+          <td><%= appointment.time %></td>
           <td><%= appointment.client.first_name %></td>
           <td><%= appointment.client.last_name %></td>
           <td><%= appointment.service.name %></td>
           <td><%= appointment.service.price %></td>
           <td>
-            <%= link_to "Edit", edit_appointment_path(appointment) %>
-            <%= link_to "Delete", appointment, method: :delete, data: { confirm: "Are you sure?" } %>
+            <%= link_to "Modifier", edit_appointment_path(appointment) %>
+             <%= link_to "Suprimer", appointment_path(appointment), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Etes vous sûr ?"
+                  } %>
           </td>
         </tr>
       <% end %>

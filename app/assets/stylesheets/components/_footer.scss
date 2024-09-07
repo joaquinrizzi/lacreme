@@ -5,6 +5,8 @@
   background-color: #4D363D;
 }
 .footer-links {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
   margin-top: 20px;
@@ -27,5 +29,23 @@
 .footer p {
   color: white;
   font-size: 20px;
+  margin-top: 20px;
+}
+
+.footer .footer-content{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.footer .footer-logo img {
+  width: 6vh;
+  border-radius: $border-radius;
+}
+
+.footer-links p {
+  color: white;
+  font-size: 1em;
   margin-top: 20px;
 }

@@ -10,7 +10,7 @@
   z-index: 1000; /* Ensure it stays on top of other elements */
   background-color: rgba(255, 179, 203, 0.5);
   padding: 10px 10px; /* Add some padding if needed */
-  border-radius: 50px 50px; /* Remove border-radius if any */
+  border-radius: $border-radius; /* Remove border-radius if any */
   margin-top: 40px;
   justify-content: space-between;
   // background: white;
@@ -20,9 +20,13 @@
   flex-grow: 0;
 }
 
+.navbar-lewagon button{
+  border-radius: $border-radius;
+}
+
 .navbar-lewagon .navbar-brand img {
-  border-radius: 50px 50px;
-  width: 100px;
+  border-radius: $border-radius;
+  width: 12vh;
 }
 
 .navbar .nav-link-joaquin {
@@ -36,6 +40,7 @@
 
 .navbar .dropdown .rounded-dropdown {
   border-radius: 10px;
+  text-align: center;
 }
 
 .navbar .nav-link-joaquin:hover {

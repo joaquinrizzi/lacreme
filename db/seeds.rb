@@ -5,9 +5,10 @@ User.destroy_all
 
 # User creation
 
-User.create!(email: 'azulsm7@gmail.com', password: '123456', role: 'admin')
-User.create!(email: 'joaquinsotorizzi@gmail.com', password: '111111', role: 'admin')
-User.create!(email: 'user@gmail.com', password: '111111', role: 'user')
+# User.create!(email: 'azulsm7@gmail.com', password: '123456', role: 'admin')
+User.create!(email: 'joaquinsotorizzi@gmail.com', password: 'Contrasenia51!', role: 'admin')
+User.create!(email: 'guest@test.com', password: '111111', role: 'guest')
+User.create!(email: 'user@test.com', password: '111111', role: 'user')
 
 
 # Service creation

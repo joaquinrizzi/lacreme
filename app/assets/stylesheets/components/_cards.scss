@@ -6,6 +6,43 @@
   flex-wrap: wrap;
 
 }
+.carousel-inner {
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item {
+  // display: grid;
+  // grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  width: 2%; /* Adjust width as needed */
+}
+
+.carousel-control-prev {
+  left: -5%; /* Move the left control outside */
+}
+
+.carousel-control-next {
+  right: -5%; /* Move the right control outside */
+}
+
+.carousel-control-prev .fa-chevron-left, .carousel-control-next .fa-chevron-right {
+  font-size: 40px;
+  color: black;
+}
+
+// .card {
+//   width: 100%;
+//   max-width: 600px; /* Adjust as needed */
+//   margin: auto;
+// }
 
 /* // Smallest device */
 @media (min-width: 100px) and (max-width: 575px) {

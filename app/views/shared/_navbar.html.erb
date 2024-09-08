@@ -5,56 +5,124 @@
       <%= image_tag "logo.png" %>
     <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#fullPageDropdown" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa-solid fa-bars"></i>
+      <%# <span class="navbar-toggler-icon"></span> %>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link nav-link-joaquin" %>
+          <%= link_to "Accueil", "#home", class: "nav-link nav-link-joaquin" %>
         </li>
         <li class="nav-item">
           <%= link_to "Catalogue", "#catalog", class: "nav-link nav-link-joaquin" %>
         </li>
         <li class="nav-item">
           <%= link_to "Mode d'emploi", "#instructions", class: "nav-link nav-link-joaquin" %>
+        </li>
         <li class="nav-item">
           <%= link_to "Contact", "#contact", class: "nav-link nav-link-joaquin" %>
         </li>
         <% if user_signed_in? %>
-          <% if current_user.has_role?(:admin) %>
-            <li class="nav-item">
-              <%= link_to "Rdvs", appointments_path, class: "nav-link nav-link-joaquin" %>
-            </li>
+          <!-- Add signed-in user links here -->
+          <% if current_user.has_role?("admin") %>
             <li class="nav-item">
               <%= link_to "Services", services_path, class: "nav-link nav-link-joaquin" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Rendez vous", appointments_path, class: "nav-link nav-link-joaquin" %>
             </li>
           <% end %>
           <li class="nav-item dropdown">
             <%= link_to "#", class: "nav-link nav-link-joaquin dropdown-toggle no-caret", id: "navbarDropdown", role: "button", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
               <i class="fa-regular fa-user avatar"></i>
-
             <% end %>
             <ul class="dropdown-menu dropdown-menu-end rounded-dropdown" aria-labelledby="navbarDropdown">
-              <li><%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %></li>
+              <li>
+                <%= link_to "Mon profile", edit_user_registration_path, class: "dropdown-item" %>
+              </li>
               <li><hr class="dropdown-divider"></li>
-              <li><%= link_to "Me déconecter", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete } %></li>
+              <li>
+                <%= link_to "Me déconecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              </li>
             </ul>
           </li>
         <% else %>
           <li class="nav-item dropdown">
-              <%= link_to "#", class: "nav-link nav-link-joaquin dropdown-toggle no-caret", id: "navbarDropdown", role: "button", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
-                <i class="fa-regular fa-user avatar"></i>
-              <% end %>
-              <ul class="dropdown-menu dropdown-menu-end rounded-dropdown" aria-labelledby="navbarDropdown">
-                <li><%= link_to "Me conecter", new_user_session_path, class: "dropdown-item" %></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><%= link_to "M'enregister", new_user_registration_path, class: "dropdown-item" %></li>
-              </ul>
-            </li>
+            <%= link_to "#", class: "nav-link nav-link-joaquin dropdown-toggle no-caret", id: "navbarDropdown", role: "button", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
+              <i class="fa-regular fa-user avatar"></i>
+            <% end %>
+            <ul class="dropdown-menu dropdown-menu-end rounded-dropdown" aria-labelledby="navbarDropdown">
+              <li>
+                <%= link_to "Me conecter", new_user_session_path, class: "dropdown-item" %>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <%= link_to "M'enregister", new_user_registration_path, class: "dropdown-item" %>
+              </li>
+            </ul>
+          </li>
         <% end %>
       </ul>
     </div>
   </div>
 </nav>
+
+<!-- Full-page dropdown modal -->
+<div class="modal fade" id="fullPageDropdown" tabindex="-1" aria-labelledby="fullPageDropdownLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <%= link_to "#", class: "navbar-brand" do %>
+          <%= image_tag "logo.png" %>
+        <% end %>
+        <button type="button" class="btn-close custom-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Add your dropdown content here -->
+        <ul class="list-group">
+          <li class="list-group-item" data-bs-dismiss="modal">
+            <%= link_to "Catalogue", "#catalog", class: "nav-link nav-link-joaquin" %>
+          </li>
+          <li class="list-group-item" data-bs-dismiss="modal">
+            <%= link_to "Mode d'emploi", "#instructions", class: "nav-link nav-link-joaquin" %>
+          </li>
+          <li class="list-group-item" data-bs-dismiss="modal">
+            <%= link_to "Contact", "#contact", class: "nav-link nav-link-joaquin" %>
+          </li>
+
+          <% if user_signed_in? %>
+            <!-- Add signed-in user links here -->
+            <% if current_user.has_role?("admin") %>
+              <li class="list-group-item" data-bs-dismiss="modal">
+                <%= link_to "Services", services_path, class: "nav-link nav-link-joaquin" %>
+              </li>
+              <li class="list-group-item" data-bs-dismiss="modal">
+                <%= link_to "Rendez vous", appointments_path, class: "nav-link nav-link-joaquin" %>
+              </li>
+            <% end %>
+
+            <li class="list-group-item"><hr class="modal-divider"></li>
+
+            <li class="list-group-item" data-bs-dismiss="modal">
+              <%= link_to "Mon profile", edit_user_registration_path, class: "nav-link nav-link-joaquin" %>
+            </li>
+            <li class="list-group-item" data-bs-dismiss="modal">
+              <%= link_to "Me déconecter", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link nav-link-joaquin" %>
+            </li>
+          <% else %>
+            <li class="list-group-item"><hr class="modal-divider"></li>
+
+            <li class="list-group-item" data-bs-dismiss="modal">
+              <%= link_to "Se connecter", new_user_session_path, class: "nav-link nav-link-joaquin" %>
+            </li>
+            <li class="list-group-item" data-bs-dismiss="modal">
+              <%= link_to "S'inscrire", new_user_registration_path, class: "nav-link nav-link-joaquin" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -13,7 +13,7 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-  border-radius: 50px 50px;
+  border-radius: $border-radius;
 }
 
 .card img:hover{
@@ -24,4 +24,40 @@
   font-size: 24px;
   font-weight: 700;
   padding: 20px;
+}
+
+
+/* // Smallest device */
+@media (min-width: 100px) and (max-width: 575px) {
+  .card img {
+    border-radius: $border-radius-sm;
+  }
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .card {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .card {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

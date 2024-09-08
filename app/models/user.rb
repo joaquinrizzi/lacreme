@@ -3,11 +3,13 @@ class User < ApplicationRecord
   has_many :services, through: :appointments
   has_many :created_services, class_name: 'Service', foreign_key: 'creator_id'
 
+  before_create :set_default_role
+
   # Define roles
   ROLES = %w[admin user guest].freeze
 
   # Ensure role is present and valid
-  validates :role, presence: true, inclusion: { in: ROLES }
+  # validates :role, presence: true, inclusion: { in: ROLES }
 
   # Method to check if user has a specific role
   def has_role?(role)
@@ -18,4 +20,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  private
+
+  def set_default_role
+    self.role ||= 'guest'
+  end
 end

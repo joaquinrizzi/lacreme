@@ -3,61 +3,26 @@
   <p class="text-center">Chez La Creme Nails, nous croyons que chaque ongle mérite d’être une œuvre d’art.</p>
   <p class="text-center"> Nous offrons une gamme complète de services de nail art pour sublimer vos ongles et exprimer votre style unique.</p>
   <div id="carouselControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-     <!-- Products -->
+    <!-- Products -->
     <div class="carousel-inner">
-      <% if window.innerWidth < 576 %>
-        <% @products.each_slice(1).with_index do |products_slice, index| %>
-          <div class="carousel-item <%= 'active' if index == 0 %>">
-            <div class="row">
-              <% products_slice.each do |product| %>
-                <div class="col-12">
-                  <div class="card">
-                    <!-- Display first image from each product using Active Storage -->
-                    <%= image_tag(product.images.first, alt: product.name, class: "card-img-top") if product.images.attached? %>
-                    <h3><%= product.name %></h3>
-                    <p><%= number_to_currency(product.price, unit: "€") %></p>
-                  </div>
+      <% @products.each_slice(3).with_index do |products_slice, index| %>
+        <div class="carousel-item <%= 'active' if index == 0 %>">
+          <div class="row">
+            <% products_slice.each do |product| %>
+              <div class="col-12 col-md-4">
+                <div class="card">
+                  <!-- Display first image from each product using Active Storage -->
+                  <%= image_tag(product.images.first, alt: product.name, class: "card-img-top") if product.images.attached? %>
+                  <h3><%= product.name %></h3>
+                  <p><%= number_to_currency(product.price, unit: "€") %></p>
                 </div>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </div>
-        <% end %>
-      <% elsif window.innerWidth < 768 %>
-        <% @products.each_slice(2).with_index do |products_slice, index| %>
-          <div class="carousel-item <%= 'active' if index == 0 %>">
-            <div class="row">
-              <% products_slice.each do |product| %>
-                <div class="col-12 col-md-6">
-                  <div class="card">
-                    <!-- Display first image from each product using Active Storage -->
-                    <%= image_tag(product.images.first, alt: product.name, class: "card-img-top") if product.images.attached? %>
-                    <h3><%= product.name %></h3>
-                    <p><%= number_to_currency(product.price, unit: "€") %></p>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
-      <% else %>
-        <% @products.each_slice(3).with_index do |products_slice, index| %>
-          <div class="carousel-item <%= 'active' if index == 0 %>">
-            <div class="row">
-              <% products_slice.each do |product| %>
-                <div class="col-12 col-md-4">
-                  <div class="card">
-                    <!-- Display first image from each product using Active Storage -->
-                    <%= image_tag(product.images.first, alt: product.name, class: "card-img-top") if product.images.attached? %>
-                    <h3><%= product.name %></h3>
-                    <p><%= number_to_currency(product.price, unit: "€") %></p>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
+        </div>
       <% end %>
     </div>
+
 
 
     <!-- Carousel control buttons -->

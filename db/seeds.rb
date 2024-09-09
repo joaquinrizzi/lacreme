@@ -41,10 +41,20 @@ products = [
   { name: 'Poseidon', price: 60.0, description: 'Press on avec motif de Poseidon', image_files: ['poseidon_1.jpeg'] }
 ]
 
+# products.each do |product_data|
+#   product = Product.create(name: product_data[:name], price: product_data[:price], description: product_data[:description])
+#   product_data[:image_files].each do |image_file|
+#     image_path = Rails.root.join('app', 'assets', 'images', image_file)
+#     product.images.attach(io: File.open(image_path), filename: image_file) if File.exist?(image_path)
+#   end
+# end
+
 products.each do |product_data|
   product = Product.create(name: product_data[:name], price: product_data[:price], description: product_data[:description])
   product_data[:image_files].each do |image_file|
     image_path = Rails.root.join('app', 'assets', 'images', image_file)
-    product.images.attach(io: File.open(image_path), filename: image_file) if File.exist?(image_path)
+    if File.exist?(image_path)
+      product.images.attach(io: File.open(image_path), filename: image_file, content_type: 'image/jpeg')
+    end
   end
 end

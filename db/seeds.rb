@@ -1,3 +1,5 @@
+require 'open-uri'
+
 Appointment.destroy_all
 Service.destroy_all
 Client.destroy_all
@@ -26,3 +28,23 @@ Service.create(name: 'gel X élaboré', price: 80.0, duration: 150, description:
 
 Client.create(first_name: 'Valentina', last_name: 'Corpateaux', email: 'valentinacorpateaux@gmail.com')
 Client.create(first_name: 'Armonia', last_name: 'Fernandez', email: 'armonia.fernandez@ldc.com')
+Client.create(first_name: 'Enola', last_name: 'Fernandez', email: 'armonia.fernandez@ldc.com')
+
+# Product creation with multiple images
+products = [
+  { name: 'Avengers', price: 45.0, description: 'Press on avec motif des Avengers', image_files: ['avengers_1.jpeg'] },
+  { name: 'Carnival', price: 30.0, description: 'Press on avec motif carnivale', image_files: ['carnival_1.jpeg'] },
+  { name: 'Léopard', price: 40.0, description: 'Press on avec motif de léopard', image_files: ['leopard_1.jpeg'] },
+  { name: 'Fairy Tale', price: 50.0, description: 'Press on avec motif de conte de fée', image_files: ['fairy_tale_1.jpeg', 'fairy_tale_2.jpeg'] },
+  { name: 'Réligion', price: 35.0, description: 'Press on avec motif réligieux', image_files: ['religion_1.jpeg', 'religion_2.jpeg'] },
+  { name: 'Van Gogh', price: 60.0, description: 'Press on avec motif de Van Gogh', image_files: ['vangogh_1.jpeg'] },
+  { name: 'Poseidon', price: 60.0, description: 'Press on avec motif de Poseidon', image_files: ['poseidon_1.jpeg'] }
+]
+
+products.each do |product_data|
+  product = Product.create(name: product_data[:name], price: product_data[:price], description: product_data[:description])
+  product_data[:image_files].each do |image_file|
+    image_path = Rails.root.join('app', 'assets', 'images', image_file)
+    product.images.attach(io: File.open(image_path), filename: image_file) if File.exist?(image_path)
+  end
+end

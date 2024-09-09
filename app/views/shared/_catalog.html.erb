@@ -3,38 +3,64 @@
   <p class="text-center">Chez La Creme Nails, nous croyons que chaque ongle mérite d’être une œuvre d’art.</p>
   <p class="text-center"> Nous offrons une gamme complète de services de nail art pour sublimer vos ongles et exprimer votre style unique.</p>
   <div id="carouselControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+     <!-- Products -->
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="row">
-          <div class="col-sm-12 col-md-4">
-            <div class="card">
-              <img src="<%= asset_path('press_1.jpg') %>" alt="">
-              <h3>Leopard</h3>
+      <% if window.innerWidth < 576 %>
+        <% @products.each_slice(1).with_index do |products_slice, index| %>
+          <div class="carousel-item <%= 'active' if index == 0 %>">
+            <div class="row">
+              <% products_slice.each do |product| %>
+                <div class="col-12">
+                  <div class="card">
+                    <!-- Display first image from each product using Active Storage -->
+                    <%= image_tag(product.images.first, alt: product.name, class: "card-img-top") if product.images.attached? %>
+                    <h3><%= product.name %></h3>
+                    <p><%= number_to_currency(product.price, unit: "€") %></p>
+                  </div>
+                </div>
+              <% end %>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="row">
-          <div class="col-12 col-md-4">
-            <div class="card">
-              <img src="<%= asset_path('press_2.jpg') %>" alt="">
-              <h3>Avengers</h3>
+        <% end %>
+      <% elsif window.innerWidth < 768 %>
+        <% @products.each_slice(2).with_index do |products_slice, index| %>
+          <div class="carousel-item <%= 'active' if index == 0 %>">
+            <div class="row">
+              <% products_slice.each do |product| %>
+                <div class="col-12 col-md-6">
+                  <div class="card">
+                    <!-- Display first image from each product using Active Storage -->
+                    <%= image_tag(product.images.first, alt: product.name, class: "card-img-top") if product.images.attached? %>
+                    <h3><%= product.name %></h3>
+                    <p><%= number_to_currency(product.price, unit: "€") %></p>
+                  </div>
+                </div>
+              <% end %>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="row">
-           <div class="col-12 col-md-4">
-              <div class="card">
-                <img src="<%= asset_path('press_3.jpg') %>" alt="">
-                <h3>Fairy tale</h3>
-              </div>
+        <% end %>
+      <% else %>
+        <% @products.each_slice(3).with_index do |products_slice, index| %>
+          <div class="carousel-item <%= 'active' if index == 0 %>">
+            <div class="row">
+              <% products_slice.each do |product| %>
+                <div class="col-12 col-md-4">
+                  <div class="card">
+                    <!-- Display first image from each product using Active Storage -->
+                    <%= image_tag(product.images.first, alt: product.name, class: "card-img-top") if product.images.attached? %>
+                    <h3><%= product.name %></h3>
+                    <p><%= number_to_currency(product.price, unit: "€") %></p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
           </div>
-        </div>
-      </div>
+        <% end %>
+      <% end %>
     </div>
+
+
+    <!-- Carousel control buttons -->
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
       <span class="" aria-hidden="true">
         <i class="fa-solid fa-chevron-left"></i>

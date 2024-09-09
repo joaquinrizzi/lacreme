@@ -1,0 +1,9 @@
+{
+  "name": "Lacreme",
+  "display": "standalone",
+   "start_url": "/",
+   "background_color": "#FDF4E7",
+   "theme_color": "#FDF4E7",
+   "orientation": "portrait",
+  "icons": []
+ }

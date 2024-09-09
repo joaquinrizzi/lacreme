@@ -28,6 +28,9 @@
           <!-- Add signed-in user links here -->
           <% if current_user.has_role?("admin") %>
             <li class="nav-item">
+              <%= link_to "Products", products_path, class: "nav-link nav-link-joaquin" %>
+            </li>
+            <li class="nav-item">
               <%= link_to "Services", services_path, class: "nav-link nav-link-joaquin" %>
             </li>
             <li class="nav-item">
@@ -97,6 +100,9 @@
           <% if user_signed_in? %>
             <!-- Add signed-in user links here -->
             <% if current_user.has_role?("admin") %>
+              <li class="list-group-item" data-bs-dismiss="modal">
+                <%= link_to "Products", products_path, class: "nav-link nav-link-joaquin" %>
+              </li>
               <li class="list-group-item" data-bs-dismiss="modal">
                 <%= link_to "Services", services_path, class: "nav-link nav-link-joaquin" %>
               </li>

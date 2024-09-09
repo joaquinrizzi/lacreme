@@ -15,4 +15,8 @@ Rails.application.routes.draw do
   resources :services, only: [:index, :create, :update, :destroy]
 
   resources :appointments, only: [:index, :show, :create, :edit, :update, :destroy]
+
+  resources :clients, only: [:index, :show, :create, :edit, :update, :destroy]
+
+  resources :products, only: [:index, :show, :create, :edit, :update, :destroy]
 end

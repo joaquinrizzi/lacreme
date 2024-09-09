@@ -1,0 +1,47 @@
+<%= render "layouts/devise" do %>
+ <h1>Produits</h1>
+  <%= link_to "Retour", root_path %>
+  <%= simple_form_for @product, url: products_path, method: :post do |f| %>
+    <%= f.input :name, label: 'Nom du produit' %>
+    <%= f.input :price, label: 'Prix' %>
+    <%= f.input :description, label: 'Description du produit' %>
+    <%= f.file_field :images, multiple: true %>
+    <%= f.submit "Soumettre" %>
+  <% end %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prix</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr data-controller="product-edit">
+          <td data-product-edit-target="name" class="display"><%= product.name %></td>
+          <td data-product-edit-target="price" class="display"><%= product.price %> <small>€</small></td>
+          <td data-product-edit-target="description" class="display"><%= product.description %></td>
+          <td class="display">
+            <%= link_to 'Modifier', '#', data: { action: 'product-edit#edit' } %>
+            <%= link_to "Suprimer", product_path(product), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Etes vous sûr ?"
+                    } %>
+            <%#= link_to 'Delete', product, method: :delete, data: { confirm: 'Etes vous sûr ?' } %>
+          </td>
+          <td class="form d-none" data-product-edit-target="form">
+            <%= form_with(model: product, local: false, html: { class: 'edit-form', data: { action: 'submit->product-edit#save' } }) do |f| %>
+              <%= f.text_field :name %>
+              <%= f.text_field :price %>
+              <%= f.text_field :description %>
+              <%= f.submit 'Save' %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

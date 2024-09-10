@@ -1,0 +1,11 @@
+{
+  "version": "1.0.4",
+  "createdAt": "2024-09-10T22:34:35.410Z",
+  "updatedAt": "2024-09-10T22:34:35.412Z",
+  "options": {
+    "ignoredControllerIdentifiers": [
+      "bs"
+    ],
+    "ignoredAttributes": []
+  }
+}

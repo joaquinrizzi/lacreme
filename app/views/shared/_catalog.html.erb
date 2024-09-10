@@ -1,15 +1,9 @@
-<div id="catalog" class="full-width-container catalog-container">
-  <h1 class="text-center">Catalogue</h1>
-  <p class="text-center">Chez La Creme Nails, nous croyons que chaque ongle mérite d’être une œuvre d’art.</p>
-  <p class="text-center"> Nous offrons une gamme complète de services de nail art pour sublimer vos ongles
+<div id="catalog" class="catalog-container">
+  <h1>Catalogue</h1>
+  <p>Chez La Creme Nails, nous croyons que chaque ongle mérite d’être une œuvre d’art.</p>
+  <p> Nous offrons une gamme complète de services de nail art pour sublimer vos ongles
     et exprimer votre style unique.</p>
   <div id="carouselControls" class="carousel slide" data-bs-ride="carousel">
-    <!-- Products -->
-    <!-- Display products in a carousel -->
-    <!-- Display 3 products per slide when screen size is greter than 575px-->
-    <!-- Display 1 product per slide when screen size is less than 575px-->
-    <!-- Display first image from each product using Active Storage -->
-
     <div class="carousel-inner">
       <% @products.each_with_index do |product, index| %>
         <div class="carousel-item <%= 'active' if index == 0 %>">

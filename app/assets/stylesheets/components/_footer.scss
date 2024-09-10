@@ -2,7 +2,7 @@
   height: 35vh;
   text-align: center;
   padding: 40px;
-  background-color: #4D363D;
+  background-color: $my-dark-violet;
 }
 .footer-links {
   display: flex;
@@ -14,8 +14,8 @@
 
 }
 .footer-links a {
-  font-size: 30px;
-  color: #1EDD88;
+  font-size: $font-size-base * 2;
+  color: $my-bright-green;
 }
 .footer-links a:hover {
   opacity: 1;

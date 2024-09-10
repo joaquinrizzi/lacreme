@@ -7,6 +7,7 @@
   position: fixed; /* If you want it to be fixed at the top */
   top: 0;
   z-index: 1000; /* Ensure it stays on top of other elements */
+  background: linear-gradient($my-pink, $my-warm-pink);
   background-color: $my-warm-pink;
   padding: 20px 20px; /* Add some padding if needed */
   justify-content: space-between;

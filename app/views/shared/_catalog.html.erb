@@ -1,5 +1,5 @@
 <div id="catalog" class="full-width-container catalog-container">
-  <h2 class="text-center">Catalogue</h2>
+  <h1 class="text-center">Catalogue</h1>
   <p class="text-center">Chez La Creme Nails, nous croyons que chaque ongle mérite d’être une œuvre d’art.</p>
   <p class="text-center"> Nous offrons une gamme complète de services de nail art pour sublimer vos ongles
     et exprimer votre style unique.</p>
@@ -10,7 +10,7 @@
     <!-- Display 1 product per slide when screen size is less than 575px-->
     <!-- Display first image from each product using Active Storage -->
 
-    <div class="carousel-inner w-100">
+    <div class="carousel-inner">
       <% @products.each_with_index do |product, index| %>
         <div class="carousel-item <%= 'active' if index == 0 %>">
           <div class="col-md-4">
@@ -18,8 +18,8 @@
               <!-- Display first image from each product using Active Storage -->
               <%= image_tag(product.images.first, alt: product.name, class: "card-img-top") if product.images.attached? %>
               <div class="card-body">
-                <h3><%= product.name %></h3>
-                <p><%= number_to_currency(product.price, unit: "€") %></p>
+                <h2><%= product.name %></h2>
+                <h3><%= number_to_currency(product.price, unit: "€") %></h3>
               </div>
             </div>
           </div>

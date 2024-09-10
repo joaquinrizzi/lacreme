@@ -94,7 +94,7 @@
 .instructions-container .content {
   background-color: #f1e7c3;
   border: solid 2px black;
-  border-radius: 20px;
+  border-radius: $my-border-radius;
   width: fit-content;
   padding: 40px;
 }

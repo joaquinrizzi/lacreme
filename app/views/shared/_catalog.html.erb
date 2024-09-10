@@ -3,28 +3,29 @@
   <p class="text-center">Chez La Creme Nails, nous croyons que chaque ongle mérite d’être une œuvre d’art.</p>
   <p class="text-center"> Nous offrons une gamme complète de services de nail art pour sublimer vos ongles
     et exprimer votre style unique.</p>
-  <div id="carouselControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+  <div id="carouselControls" class="carousel slide" data-bs-ride="carousel">
     <!-- Products -->
-    <div class="carousel-inner">
-      <% @products.each_slice(3).with_index do |products_slice, index| %>
+    <!-- Display products in a carousel -->
+    <!-- Display 3 products per slide when screen size is greter than 575px-->
+    <!-- Display 1 product per slide when screen size is less than 575px-->
+    <!-- Display first image from each product using Active Storage -->
+
+    <div class="carousel-inner w-100">
+      <% @products.each_with_index do |product, index| %>
         <div class="carousel-item <%= 'active' if index == 0 %>">
-          <div class="row">
-            <% products_slice.each do |product| %>
-              <div class="col-12 col-md-4">
-                <div class="card">
-                  <!-- Display first image from each product using Active Storage -->
-                  <%= image_tag(product.images.first, alt: product.name, class: "card-img-top") if product.images.attached? %>
-                  <h3><%= product.name %></h3>
-                  <p><%= number_to_currency(product.price, unit: "€") %></p>
-                </div>
+          <div class="col-md-4">
+            <div class="card">
+              <!-- Display first image from each product using Active Storage -->
+              <%= image_tag(product.images.first, alt: product.name, class: "card-img-top") if product.images.attached? %>
+              <div class="card-body">
+                <h3><%= product.name %></h3>
+                <p><%= number_to_currency(product.price, unit: "€") %></p>
               </div>
-            <% end %>
+            </div>
           </div>
         </div>
       <% end %>
     </div>
-
-
 
     <!-- Carousel control buttons -->
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">

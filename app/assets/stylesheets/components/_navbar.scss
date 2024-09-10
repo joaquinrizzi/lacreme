@@ -2,21 +2,15 @@
 
 
 .navbar-lewagon {
-  // width: calc(100% - 80px); /* Ensure it spans the full width */
   width: 100vw;
   height: 15vh;
   position: fixed; /* If you want it to be fixed at the top */
   top: 0;
-  // left: 40px;
-  // right: 40px;
   z-index: 1000; /* Ensure it stays on top of other elements */
-  background-color: rgba(255, 179, 203, 0.5);
+  background-color: $my-warm-pink;
   padding: 20px 20px; /* Add some padding if needed */
-  // border-radius: $border-radius; /* Remove border-radius if any */
-  // margin-top: 40px;
   justify-content: space-between;
   align-items: center;
-  // background: white;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -24,7 +18,7 @@
 }
 
 .navbar-lewagon button{
-  border-radius: $border-radius;
+  border-radius: $my-border-radius;
   outline: none;
 }
 
@@ -44,13 +38,13 @@
 }
 
 .navbar-brand img {
-  border-radius: $border-radius;
+  border-radius: $my-border-radius;
   width: 8vh;
 }
 
-.navbar .nav-link-joaquin {
-  color: white;
-  font-size: 20px;
+.navbar .nav-link {
+  color: $my-sand;
+  font-size: $font-size-base * 1.5;
 }
 
 .navbar .nav-item .no-caret::after {
@@ -58,11 +52,11 @@
 }
 
 .navbar .dropdown .rounded-dropdown {
-  border-radius: 10px;
+  border-radius: $my-border-radius;
   text-align: center;
 }
 
-.navbar .nav-link-joaquin:hover {
+.navbar .nav-link:hover {
   color: black;
 }
 
@@ -87,7 +81,7 @@
 }
 
 .modal-header .btn-close {
-  border-radius: $border-radius;
+  border-radius: $my-border-radius;
   outline: none;
   margin: 0;
 }

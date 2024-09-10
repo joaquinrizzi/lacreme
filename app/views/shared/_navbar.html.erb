@@ -13,32 +13,32 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item active">
-          <%= link_to "Accueil", "#home", class: "nav-link nav-link-joaquin" %>
+          <%= link_to "Accueil", "#home", class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Catalogue", "#catalog", class: "nav-link nav-link-joaquin" %>
+          <%= link_to "Catalogue", "#catalog", class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Mode d'emploi", "#instructions", class: "nav-link nav-link-joaquin" %>
+          <%= link_to "Mode d'emploi", "#instructions", class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Contact", "#contact", class: "nav-link nav-link-joaquin" %>
+          <%= link_to "Contact", "#contact", class: "nav-link" %>
         </li>
         <% if user_signed_in? %>
           <!-- Add signed-in user links here -->
           <% if current_user.has_role?("admin") %>
             <li class="nav-item">
-              <%= link_to "Products", products_path, class: "nav-link nav-link-joaquin" %>
+              <%= link_to "Products", products_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Services", services_path, class: "nav-link nav-link-joaquin" %>
+              <%= link_to "Services", services_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Rendez vous", appointments_path, class: "nav-link nav-link-joaquin" %>
+              <%= link_to "Rendez vous", appointments_path, class: "nav-link" %>
             </li>
           <% end %>
           <li class="nav-item dropdown">
-            <%= link_to "#", class: "nav-link nav-link-joaquin dropdown-toggle no-caret", id: "navbarDropdown", role: "button", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
+            <%= link_to "#", class: "nav-link dropdown-toggle no-caret", id: "navbarDropdown", role: "button", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
               <i class="fa-regular fa-user avatar"></i>
             <% end %>
             <ul class="dropdown-menu dropdown-menu-end rounded-dropdown" aria-labelledby="navbarDropdown">
@@ -55,7 +55,7 @@
         <!-- commenting out the following lines for PROD for the time being -->
 
           <%# <li class="nav-item dropdown"> %>
-            <%#= link_to "#", class: "nav-link nav-link-joaquin dropdown-toggle no-caret", id: "navbarDropdown", role: "button", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
+            <%#= link_to "#", class: "nav-link dropdown-toggle no-caret", id: "navbarDropdown", role: "button", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
               <%# <i class="fa-regular fa-user avatar"></i> %>
             <%# end %>
             <%# <ul class="dropdown-menu dropdown-menu-end rounded-dropdown" aria-labelledby="navbarDropdown"> %>
@@ -88,36 +88,36 @@
         <!-- Add your dropdown content here -->
         <ul class="list-group">
           <li class="list-group-item" data-bs-dismiss="modal">
-            <%= link_to "Catalogue", "#catalog", class: "nav-link nav-link-joaquin" %>
+            <%= link_to "Catalogue", "#catalog", class: "nav-link" %>
           </li>
           <li class="list-group-item" data-bs-dismiss="modal">
-            <%= link_to "Mode d'emploi", "#instructions", class: "nav-link nav-link-joaquin" %>
+            <%= link_to "Mode d'emploi", "#instructions", class: "nav-link" %>
           </li>
           <li class="list-group-item" data-bs-dismiss="modal">
-            <%= link_to "Contact", "#contact", class: "nav-link nav-link-joaquin" %>
+            <%= link_to "Contact", "#contact", class: "nav-link" %>
           </li>
 
           <% if user_signed_in? %>
             <!-- Add signed-in user links here -->
             <% if current_user.has_role?("admin") %>
               <li class="list-group-item" data-bs-dismiss="modal">
-                <%= link_to "Products", products_path, class: "nav-link nav-link-joaquin" %>
+                <%= link_to "Products", products_path, class: "nav-link" %>
               </li>
               <li class="list-group-item" data-bs-dismiss="modal">
-                <%= link_to "Services", services_path, class: "nav-link nav-link-joaquin" %>
+                <%= link_to "Services", services_path, class: "nav-link" %>
               </li>
               <li class="list-group-item" data-bs-dismiss="modal">
-                <%= link_to "Rendez vous", appointments_path, class: "nav-link nav-link-joaquin" %>
+                <%= link_to "Rendez vous", appointments_path, class: "nav-link" %>
               </li>
             <% end %>
 
             <li class="list-group-item"><hr class="modal-divider"></li>
 
             <li class="list-group-item" data-bs-dismiss="modal">
-              <%= link_to "Mon profile", edit_user_registration_path, class: "nav-link nav-link-joaquin" %>
+              <%= link_to "Mon profile", edit_user_registration_path, class: "nav-link" %>
             </li>
             <li class="list-group-item" data-bs-dismiss="modal">
-              <%= link_to "Me déconecter", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link nav-link-joaquin" %>
+              <%= link_to "Me déconecter", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link" %>
             </li>
           <% else %>
 
@@ -125,10 +125,10 @@
             <%# <li class="list-group-item"><hr class="modal-divider"></li> %>
 
             <%# <li class="list-group-item" data-bs-dismiss="modal"> %>
-              <%#= link_to "Se connecter", new_user_session_path, class: "nav-link nav-link-joaquin" %>
+              <%#= link_to "Se connecter", new_user_session_path, class: "nav-link" %>
             <%# </li> %>
             <%# <li class="list-group-item" data-bs-dismiss="modal"> %>
-              <%#= link_to "S'inscrire", new_user_registration_path, class: "nav-link nav-link-joaquin" %>
+              <%#= link_to "S'inscrire", new_user_registration_path, class: "nav-link" %>
             <%# </li> %>
           <% end %>
         </ul>

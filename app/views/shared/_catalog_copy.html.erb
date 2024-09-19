@@ -1,0 +1,32 @@
+<div id="catalog" class="catalog-container">
+  <h1>Catalogue</h1>
+  <p>Chez La Creme Nails, nous croyons que chaque ongle mérite d’être une œuvre d’art.</p>
+  <p>Nous offrons une gamme complète de services de nail art pour sublimer vos ongles et exprimer votre style unique.</p>
+  <div id="myCarousel" class="my-carousel" data-controller="carousel">
+    <div class="my-carousel-inner">
+      <% @products.each_with_index do |product_slice, index| %>
+        <div class="my-carousel-item <%= 'active' if index == 0 %>" data-carousel-target="slide">
+          <div class="card-trip">
+            <%= image_tag product_slice.images.first if product_slice.images.attached? %>
+            <div class="card-trip-infos">
+              <h2 class="card-title"><%= product_slice.name %></h2>
+              <h3 class="card-price"><%= number_to_currency(product_slice.price, unit: "€") %></h3>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <button class="my-carousel-control-prev my-carousel-control" type="button" data-action="click->carousel#previous">
+      <%# <span class="carousel-control-prev-icon" aria-hidden="true"> %>
+        <i class="fa-solid fa-chevron-left"></i>
+      <%# </span> %>
+      <%# <span class="visually-hidden">Previous</span> %>
+    </button>
+    <button class="my-carousel-control-next my-carousel-control" type="button" data-action="click->carousel#next">
+      <%# <span class="carousel-control-next-icon" aria-hidden="true"> %>
+        <i class="fa-solid fa-chevron-right"></i>
+      <%# </span> %>
+      <%# <span class="visually-hidden">Next</span> %>
+    </button>
+  </div>
+</div>

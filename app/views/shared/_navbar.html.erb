@@ -1,13 +1,12 @@
 <!-- In your navbar HTML, e.g., _navbar.html.erb -->
 <nav class="navbar navbar-expand-lg navbar-light navbar-lewagon">
-  <div class="container-fluid">
+  <%# <div class="container-fluid"> %>
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag "logo.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#fullPageDropdown" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fa-solid fa-bars"></i>
-      <%# <span class="navbar-toggler-icon"></span> %>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -71,7 +70,7 @@
         <% end %>
       </ul>
     </div>
-  </div>
+  <%# </div> %>
 </nav>
 
 <!-- Full-page dropdown modal -->
@@ -82,7 +81,9 @@
         <%= link_to "#", class: "navbar-brand" do %>
           <%= image_tag "logo.png" %>
         <% end %>
-        <button type="button" class="btn-close custom-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="navbar-toggler" data-bs-dismiss="modal" aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
       </div>
       <div class="modal-body">
         <!-- Add your dropdown content here -->

@@ -1,8 +1,3 @@
-.container {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-}
 
 @media(max-width: 900px) {
   .container {
@@ -16,6 +11,12 @@
     width: 300px;
     height: 100%;
   }
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
 
 .full-width-container {
@@ -52,6 +53,7 @@
 .catalog-container {
   // justify-content: space-around;
   // align-items: center;
+  text-align: center;
   padding: $container-padding;
 }
 

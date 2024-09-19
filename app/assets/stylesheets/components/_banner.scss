@@ -33,7 +33,7 @@
 
 .banner h1 {
   margin: 0;
-  color: white;
+  color: $my-ivory;
   text-shadow: $my-text-shadow;
   font-size: $font-size-base * 2;
   font-weight: 900;
@@ -43,7 +43,7 @@
 
 .banner p {
   font-size: $font-size-base * 1.5;
-  color: white;
+  color: $my-ivory;
   opacity: .7;
   // font-family: $headings-font-family;
   text-shadow: $my-text-shadow;

@@ -1,0 +1,39 @@
+.my-carousel {
+  // margin-top: 40px;
+  position: relative;
+}
+
+.my-carousel-inner {
+  display: flex;
+  justify-content: center;
+  padding: $container-padding;
+}
+
+.my-carousel-item {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease;
+}
+
+.my-carousel-item.active {
+  display: flex;
+}
+
+.my-carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  border: none;
+  background-color: transparent;
+  font-weight: 900;
+}
+
+.my-carousel-control-prev {
+  left: 10px; /* Adjust as needed */
+}
+
+.my-carousel-control-next {
+  right: 10px; /* Adjust as needed */
+}

@@ -9,7 +9,7 @@
   z-index: 1000; /* Ensure it stays on top of other elements */
   background: linear-gradient($my-pink, $my-warm-pink);
   background-color: $my-warm-pink;
-  padding: 20px 20px; /* Add some padding if needed */
+  padding: $my-padding; /* Add some padding if needed */
   justify-content: space-between;
   align-items: center;
 }
@@ -18,24 +18,25 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon button{
-  border-radius: $my-border-radius;
-  outline: none;
-}
+// .navbar-lewagon button {
+//   border-radius: $my-border-radius;
+//   outline: none;
+//   width: 2rem;
+// }
 
-.navbar-lewagon .navbar-toggler {
+.navbar-toggler {
   border: 0;
   color: transparent;
   padding: 0;
 }
 
 .navbar-toggler .fa-bars {
-  color: white;
+  color: $my-sand;
   font-size: 2rem;
 }
 
 .navbar-brand {
-  padding: 10px;
+  padding: 0;
 }
 
 .navbar-brand img {
@@ -61,30 +62,48 @@
   color: black;
 }
 
+.modal {
+  background-color: $my-ivory;
+}
+
 .modal-header {
   width: 100vw;
   height: 15vh;
   position: fixed;
   z-index: 1000; /* Ensure it stays on top of other elements */
-  background-color: rgba(255, 179, 203, 0.5);
+  background: linear-gradient($my-pink, $my-warm-pink);
+  background-color: $my-warm-pink;
   // color: white;
   // height: 100px;
-  padding: 40px 40px;
+  padding: $my-padding;
   justify-content: space-between;
 }
 
-.modal-body .list-group {
+.modal-body {
   margin-top: 15vh;
+  background-color: $my-ivory;
+  padding: $container-padding;
 }
 
 .modal-body .list-group-item {
   border: 0;
 }
 
-.modal-header .btn-close {
+.modal-body .nav-link {
+  color: $my-dark-violet;
+  font-weight: 900;
+}
+
+.modal-header .btn {
   border-radius: $my-border-radius;
   outline: none;
   margin: 0;
+  width: 2rem;
+}
+
+.modal-header .fa-xmark {
+  color: $my-sand;
+  font-size: 2rem;
 }
 
 .modal-divider {

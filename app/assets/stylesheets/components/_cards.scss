@@ -1,102 +1,40 @@
 .cards {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 40px;
-  // margin-bottom: 40px;
-  flex-wrap: wrap;
-
-}
-.carousel-inner {
-  // display: grid;
-  // grid-template-columns: 1fr 1fr 1fr;
-  margin-top: 40px;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
 }
 
-.carousel-item {
-  // display: grid;
-  // grid-template-columns: 1fr;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel-control-prev, .carousel-control-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 5%;
-  z-index: 1;
-  // width: 0%; /* Adjust width as needed */
-}
-
-.carousel-control-prev {
-  left: 0;
-  // left: -5%; /* Move the left control outside */
-}
-
-.carousel-control-next {
-  right: 0;
-  // right: -5%; /* Move the right control outside */
-}
-
-.carousel-control-prev i,
-.carousel-control-next i {
-  font-size: 2rem; /* Adjust the size of the icons as needed */
-}
-
-
-// .carousel-control-prev .fa-chevron-left, .carousel-control-next .fa-chevron-right {
-//   font-size: 40px;
-//   color: black;
-// }
-
-// .card {
-//   width: 100%;
-//   max-width: 600px; /* Adjust as needed */
-//   margin: auto;
-// }
-
-/* // Smallest device */
+// Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
-  // .cards {
-  //   grid-template-columns: 1fr;
-  // }
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* // Small devices (landscape phones, 576px and up) */
+// Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-  // .cards {
-  //   grid-template-columns: 1fr;
-  // }
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* // Medium devices (tablets, 768px and up) */
+// Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  // .cards {
-  //   grid-template-columns: 1fr 1fr;
-  // }
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 10%; /* Increase the width for better visibility on small screens */
-  }
-
-  .carousel-control-prev i,
-  .carousel-control-next i {
-    font-size: 1.5rem; /* Adjust the icon size for small screens */
+  .cards {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-/* // Large devices (desktops, 992px and up) */
+// Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  // .cards {
-  //   grid-template-columns: 1fr 1fr 1fr;
-  // }
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
-/* // Extra large devices (large desktops, 1200px and up) */
+// Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-  // .cards {
-  //   grid-template-columns: 1fr 1fr 1fr;
-  // }
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

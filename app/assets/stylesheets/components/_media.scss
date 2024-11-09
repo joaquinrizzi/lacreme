@@ -1,0 +1,66 @@
+.media-scroller {
+  --_spacer: var(--size-3);
+  display: grid;
+  gap: var(--_spacer);
+  grid-auto-flow: column;
+  grid-auto-columns: 21%;
+
+  padding: 0 var(--_spacer) var(--_spacer);
+
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  animation: 60s slide infinite linear;
+
+}
+
+
+.media-element {
+  display: grid;
+  grid-template-rows: min-content;
+  gap: var(--_spacer);
+  padding: var(--_spacer);
+  // background: var(--surface-2);
+  border-radius: $my-border-radius;
+  // border: 1px solid white;
+  backdrop-filter: blur(10px);
+
+}
+
+.media-element img {
+  transform: scale(0.8);
+  // opacity: 0;
+  inline-size: 100%;
+  // aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: $my-border-radius;
+  box-shadow: var(--shadow-3);
+  // animation: my-fade-in 1s linear forwards;
+  // animation-timeline: view();
+  // animation-range: contain;
+}
+
+.snaps-inline {
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: var(--_spacer, 1rem);
+}
+
+.snaps-inline > * {
+  scroll-snap-align: start;
+}
+
+
+@keyframes my-fade-in {
+
+  to {transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

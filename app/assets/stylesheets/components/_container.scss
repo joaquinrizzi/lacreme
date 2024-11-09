@@ -29,7 +29,6 @@
 
 .session-container {
   height: 70vh;
-  // width: 80vw;
   justify-content: center;
   align-items: center;
   padding: $container-padding;
@@ -41,7 +40,6 @@
   border: 1px solid #4A4A4A;
   padding: 8px 24px;
   border-radius: 50px;
-  // font-weight: lighter;
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
@@ -51,14 +49,24 @@
 }
 
 .catalog-container {
-  // justify-content: space-around;
-  // align-items: center;
+  // background-color: $my-lemon;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   padding: $container-padding;
 }
 
 .catalog-container h1, .catalog-container h2, .catalog-container h3, .catalog-container p {
   text-align: center;
+  color: $my-ivory;
+  text-shadow: $my-text-shadow;
+  font-size: $font-size-base * 2;
+  font-style: normal;
+}
+
+.catalog-container h1 {
+  font-weight: 900;
 }
 
 
@@ -67,7 +75,8 @@
 }
 
 .home-container {
-  background-image: url(asset_path('lacreme_background.jpg'));
+  background: linear-gradient(0.125turn, $my-ivory, $my-warm-pink, $my-pink);
+  // background-image: url(asset_path('bkgrd_7.png'));
   background-size: cover;
 }
 
@@ -84,6 +93,10 @@
   text-align: center;
   font-weight: 900;
   align-self: center;
+  color: $my-ivory;
+  text-shadow: $my-text-shadow;
+  font-size: $font-size-base * 2;
+  font-style: normal;
 }
 
 .instructions-container .img-left {
@@ -98,6 +111,7 @@
 .instructions-container p {
   text-align: center;
   font-size: $font-size-base * 1.2;
+  color: white;
 }
 
 .instructions-container .mode-emploi-container{
@@ -116,17 +130,13 @@
   padding: 20px;
 }
 
-// .instructions-container .title {
-//   h1, h2, img {
-//     // display: inline-block;
-//   }
-// }
-
 .instructions-container .instructions-content {
-  // background-color: #f1e7c3;
-  background-color: $my-beige;
-  border: solid 2px black;
+  background-color: transparent;
+  // background-color: $my-beige;
+  border: solid 2px white;
   border-radius: $my-border-radius;
+  box-shadow: $my-box-shadow;
+  backdrop-filter: blur(10px);
   width: fit-content;
   padding: 40px;
 }

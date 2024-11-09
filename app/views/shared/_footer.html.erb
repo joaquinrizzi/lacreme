@@ -1,21 +1,19 @@
 <!-- code a footer -->
 <div id="contact" class="footer">
-  <div class="full-width-container">
-    <div class="footer-content">
-      <div class="footer-logo">
-        <%= link_to "#", class: "footer-logo" do %>
-          <%= image_tag "logo.png" %>
-        <% end %>
-      </div>
-    </div>
-      <p>Lyon, France</p>
-    <hr style="color: white;">
-    <div class="footer-links">
-      <%# <a href="#"><i class="fab fa-facebook"></i></a> %>
-      <%# <a href="#"><i class="fab fa-twitter"></i></a> %>
-      <p>© 2024 La Crème Nails</p>
-      <a href="https://www.instagram.com/lacreme_nails/" target="_blank" ><i class="fab fa-instagram"></i></a>
-      <%# <a href="#"><i class="fas fa-heart"></i></a> %>
-    </div>
+  <div class="footer-logo footer-content">
+    <%= link_to "#" do %>
+      <%= image_tag "logo.png" %>
+    <% end %>
+  </div>
+  <div class="footer-info footer-content">
+    <p>Lyon, France</p>
+  </div>
+  <%# <hr> %>
+  <div class="footer-links footer-content">
+    <%# <a href="#"><i class="fab fa-facebook"></i></a> %>
+    <%# <a href="#"><i class="fab fa-twitter"></i></a> %>
+    <p>© 2024 La Crème Nails</p>
+    <a href="https://www.instagram.com/lacreme_nails/" target="_blank" ><i class="fab fa-instagram"></i></a>
+    <%# <a href="#"><i class="fas fa-heart"></i></a> %>
   </div>
 </div>

@@ -6,3 +6,4 @@
 //= link bootstrap.min.js
 //= link_application.css
 //= link manifest.json
+//= link_tree ../builds

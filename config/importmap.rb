@@ -9,6 +9,9 @@ pin "bootstrap", to: 'bootstrap.min.js', preload: true
 pin "@popperjs/core", to: "popper.js", preload: true
 pin "flatpickr" # @4.6.13
 
+# pin "open-props", to: "https://unpkg.com/open-props@latest/open-props.min.css"
+
+
 # pin "popper", to: 'popper.js', preload: true
 
 # pin "bootstrap" # @5.3.3

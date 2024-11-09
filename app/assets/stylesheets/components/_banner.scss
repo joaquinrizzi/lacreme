@@ -2,7 +2,7 @@
   position: relative;
   background-size: cover;
   background-position: center;
-  height: 70vh; /* Full viewport height */
+  height: 70vh;
   width: 100vw; /* Full viewport width */
   margin: 0; /* Remove any default margin */
   padding: 0; /* Remove any default padding */
@@ -17,7 +17,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black overlay */
+  // background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black overlay */
   z-index: 1; /* Ensure the overlay is above the background image */
 }
 

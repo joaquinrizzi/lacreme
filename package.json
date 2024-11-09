@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@popperjs/core": "^2.11.8"
+    "@popperjs/core": "^2.11.8",
+    "open-props": "^1.7.6"
   }
 }

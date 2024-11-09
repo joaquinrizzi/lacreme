@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="icon" type="image/png" href=<%= image_path("logo.png") %> />
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
@@ -46,6 +47,20 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+     <!-- Include open-props CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/open-props@latest/open-props.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/open-props/buttons.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.dark.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/open-props/buttons.dark.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.light.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/open-props/buttons.light.min.css">
+
+
     <!-- Hotjar Tracking Code for Site 5037203 (nom manquant) -->
     <%# <script>
         (function(h,o,t,j,a,r){

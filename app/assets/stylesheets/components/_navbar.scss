@@ -7,8 +7,8 @@
   position: fixed; /* If you want it to be fixed at the top */
   top: 0;
   z-index: 1000; /* Ensure it stays on top of other elements */
-  background: linear-gradient($my-pink, $my-warm-pink);
-  background-color: $my-warm-pink;
+  background: linear-gradient(0.25turn, $my-warm-pink, $my-pink);
+  // background-color: $my-pink;
   padding: $my-padding; /* Add some padding if needed */
   justify-content: space-between;
   align-items: center;
@@ -31,7 +31,7 @@
 }
 
 .navbar-toggler .fa-bars {
-  color: $my-sand;
+  color: $my-ivory;
   font-size: 2rem;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .navbar .nav-link {
-  color: $my-sand;
+  color: $my-ivory;
   font-size: $font-size-base * 1.5;
 }
 
@@ -102,7 +102,7 @@
 }
 
 .modal-header .fa-xmark {
-  color: $my-sand;
+  color: $my-ivory;
   font-size: 2rem;
 }
 
